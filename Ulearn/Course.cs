@@ -7,20 +7,12 @@ using System.Text;
 namespace Ulearn
 {
 	//Перечисление енум
-	public enum Color
-	{
-		Red,
-		Green,
-		Blue
-	}
-	class Course
+
+	public class Course
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+
 		//Все операции сравнения
-        void Sravnenie()
+		public static void Sravnenie()
         {
             //Сравнение, как сложение или деление, тоже имеет возвращаемое значение
             Console.WriteLine(5 < 4);
@@ -51,7 +43,7 @@ namespace Ulearn
             // Операция "НЕ", или отрицание
             Console.WriteLine(!(5 < 4));
         }
-		static string GetColorNameGoodWay(Color color)
+		public static string GetColorNameGoodWay(Color color)
 		{
 			if (color == Color.Red) return "Красный";
 			if (color == Color.Blue) return "Синий";
@@ -67,14 +59,14 @@ namespace Ulearn
 			*/
 		}
 		//Если совершенно точно известно, что новые цвета появляться не будут, можно писать так:
-		static string GetColorName(Color color)
+		public static string GetColorName(Color color)
 		{
 			if (color == Color.Red) return "Красный";
 			else if (color == Color.Blue) return "Синий";
 			else return "Зеленый";
 		}
 		//Допустим, вы решили написать метод, возвращающий отрицание переменной
-		static bool Negate(bool argument)
+		public static bool Negate(bool argument)
 		{
 			return !argument;
 			// так правильно
@@ -86,7 +78,7 @@ namespace Ulearn
 			 */
 		}
 		//Или метод, сравнивающий два значения
-		static bool LessThan(int arg1, int arg2)
+		public static bool LessThan(int arg1, int arg2)
 		{
 			return arg1 < arg2;
 			//так правильно
@@ -98,7 +90,7 @@ namespace Ulearn
 			 */
 		}
 		//Массивы
-		static void Mass()
+		public static void Mass()
         {
             //Объявляем переменную array, точно так же, как раньше объявляли переменные других типов.
             //Тип массива чисел - это int[]. Аналогично, есть типы string[], double[], и т.д.
@@ -140,8 +132,8 @@ namespace Ulearn
             for (int i = 0; i < array2.Length; i++)
                 array2[i] = 2 * i;
         }
-        //Короткая запись массивов
-        static void ShotMas()
+		//Короткая запись массивов
+		public static void ShotMas()
         {
 			//Как и с другими типами, можно использовать var и совместить объявление и инициализацию
 			var array1 = new int[3];
@@ -166,7 +158,7 @@ namespace Ulearn
 			var array6 = new object[] { 1, "2", 3 };
 		}
 		//Многомерные массивы
-		static void MnogMas()
+		public static void MnogMas()
         {
             //Двумерные массивы имеют тип int[,] (соответственно, double[,], string[,] и т.д.)
             int[,] twoDimensionalArray = new int[2, 3];
@@ -183,8 +175,8 @@ namespace Ulearn
             //Могут быть массивы и бо́льшей размерности
             int[,,] threeDimensionalArray = new int[2, 3, 4];
         }
-        //Списки
-        static void Spic()
+		//Списки
+		public static void Spic()
         {
 			//Длину массива нельзя изменить
 			//Иногда хочется, чтобы массив динамически рос, потому что мы не знаем заранее,
@@ -205,7 +197,7 @@ namespace Ulearn
 				Console.WriteLine(e);
 		}
 		//Словари
-		static void Dict()
+		public static void Dict()
         {
 			// Массивы и листы позволяют нам установить соответствие между числом 
 			// (индексом массива) и чем-то: например, массив string[] по числу дает доступ
@@ -248,7 +240,7 @@ namespace Ulearn
 
 		}
 		//StringBuolder
-		void Builder()
+		public static void Builder()
 		{
 			//StringBuilder - это класс, представляющий собой изменяемую строку
 			var builder = new StringBuilder();
@@ -271,7 +263,7 @@ namespace Ulearn
 			//Только в тех случаях, когда действительно выполняется много преобразований
 		}
 		//Специальные символы
-		void Spec()
+		public static void Spec()
 		{
 			//Символ перевода строки
 			Console.WriteLine("First line\nSecond line");
@@ -306,7 +298,7 @@ Some {\i LaTeX} text here.");
 			Console.WriteLine(@"This is "" quotes");
 		}
 		//Форматированный вывод
-		void Format()
+		public static void Format()
 		{
 			var a = 13;
 			var b = 14.3456789;
@@ -367,7 +359,7 @@ Some {\i LaTeX} text here.");
 			Console.WriteLine("{0}{{}}", a); // 13{}
 		}
 		//Работа с файлами
-		void Files()
+		public static void Files()
         {
 			// Запись текста в файл:
 			File.WriteAllText("1.txt", "Hello, world!");
@@ -398,5 +390,22 @@ Some {\i LaTeX} text here.");
 			foreach (var file in Directory.GetFiles("."))
 				Console.WriteLine(file);
 		}
+		//Рекурсия
+		public static int fact (int a)
+        {
+            if (a == 0 || a == 1)
+            {
+				return 1;
+            }
+            else
+            {
+				return a * fact(a - 1);
+            }
+        }
+		//Интерфейсы
+		public static void Inter()
+        {
+
+        }
 	}
 }

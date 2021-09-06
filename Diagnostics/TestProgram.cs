@@ -17,7 +17,10 @@ namespace Diagnostics
             watch.Start();
             //код
             watch.Stop();
-            Console.WriteLine(watch.ElapsedMilliseconds); // 1 секунда = 1000 Миллисекунд
+
+            TimeSpan timeSpan = watch.Elapsed;
+
+            Console.WriteLine("Время работы скрипта: {0}h {1}m {2}s {3}ms", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
         }
     }
 }

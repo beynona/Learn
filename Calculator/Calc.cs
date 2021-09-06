@@ -7,8 +7,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            File.WriteAllText("C:\test\new.txt", "123456");
+
         }
    
     }
